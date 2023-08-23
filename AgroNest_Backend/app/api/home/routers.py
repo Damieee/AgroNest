@@ -2,7 +2,7 @@ import datetime
 import random
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from . import schemas, crud
+from ..home import schemas, crud
 from core.engine import get_db
 from . import quotes
 from .. import deps
