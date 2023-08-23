@@ -5,7 +5,7 @@ from . import models
 from datetime import datetime
 from fastapi import HTTPException, status, Depends
 from .. import deps
-from db.models import Note
+from .models import Note
 
 
 def create_note(token: str, db: Session, note: schemas.Note):
