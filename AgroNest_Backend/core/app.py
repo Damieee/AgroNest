@@ -1,7 +1,7 @@
 from app.routes import api_router_v1
 from fastapi import FastAPI
 
-from app.app.api.utils.notification import init_fcm
+from app.api.utils.notification import init_fcm
 from .engine import create_db_and_tables
 from fastapp.api.responses import UJSONResponse
 from fastapp.api.middleware.cors import CORSMiddleware
@@ -11,7 +11,7 @@ from fastapp.api.exceptions import RequestValidationError
 from .exception_handlers import validation_exception_handler, http_exception_handler
 
 from fastapi import status
-from app.app.api.common.models import ResponseModel
+from app.api.common.models import ResponseModel
 from starlette.exceptions import HTTPException as StarletteHTTPException
 import os
 

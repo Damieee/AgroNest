@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from fastapi import status
 from fastapp.api.responses import JSONResponse
-from app.app.api.common.models import ResponseModel
+from app.api.common.models import ResponseModel
 
 
 async def validation_exception_handler(request, exc):
