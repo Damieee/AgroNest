@@ -67,15 +67,6 @@ def create_note(token: str,
 
     return db_note
 
-
-# @router.get("/notes/today")  #  response_model=list[schemas.ShowNote]
-# def get_all_notes_created_today(db: Session = Depends(get_db),
-#                                 current_user: User = Depends(
-#                                     deps.get_current_user)):
-#     notes = crud.get_all_notes_created_today(db=db)
-#     return notes
-
-
 @router.get(
     "/notes/{note_id}", )  #  response_model=schemas.ShowNote
 def get_specific_note(token: str, note_id: int,
@@ -114,40 +105,3 @@ def update_note(token: str,
 #                 db: Session = Depends(get_db)):
 #     note = crud.update_note(db=db, note_id=note_id, note=note)
 #     return 'note'
-
-
-@router.post('/faq', name='Have a question?')
-def ask_question(request: schemas.LeadCollectedModel,
-                 db: Session = Depends(get_db)):
-    '''
-    This endpoint is for collecting email from the user.\n
-
-    Args:\n
-    \temail  :   Required
-
-    Response:\n
-    \t{
-        \t"status": "success",
-        \t"message": "Successfully joined the newsletter",
-        \t"data": {
-        \t    "id": 1,
-        \t    "email": "askquestion@app.soberpal.com"
-        \t}
-    \t}
-    '''
-    email = crud.create_lead_email(db, request)
-
-    return ResponseModel.success(
-        email,
-        message='Successfully joined the newsletter',
-    )
-
-
-@router.get('/faq', name='get all email')
-def get_all_email(db: Session = Depends(get_db)):
-    emails = crud.get_all_email(db)
-
-    return ResponseModel.success(
-        emails,
-        message='ok',
-    )
