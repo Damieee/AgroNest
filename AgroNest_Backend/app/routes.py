@@ -1,9 +1,9 @@
-from fastapp.api.routing import APIRouter
+from fastapi import APIRouter
 
-from .app.api.auth.views import router as auth_router
-from .app.api.payments.views import router as payments_router
-from .app.api.wallet.views import router as wallet_router
-from .app.api.user_module.views import router as user_module_router
+from app.api.auth.views import router as auth_router
+from app.api.payments.views import router as payments_router
+from app.api.wallet.views import router as wallet_router
+from app.api.user_module.views import router as user_module_router
 
 
 

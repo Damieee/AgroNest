@@ -10,15 +10,15 @@ from fastapp.api.exceptions import RequestValidationError
 
 from .exception_handlers import validation_exception_handler, http_exception_handler
 
-from fastapi import status
+from fastapi import status, HTTPException
 from app.api.common.models import ResponseModel
-from starlette.exceptions import HTTPException as StarletteHTTPException
+
 import os
 
 
 def get_app() -> FastAPI:
     """
-    
+
     Get FastAPI application.
 
     This is the main constructor of an application.
@@ -73,7 +73,7 @@ def get_app() -> FastAPI:
     async def custom_validation_exception_handler(request, exc):
         return await validation_exception_handler(request, exc)
 
-    @appv1.exception_handler(StarletteHTTPException)
+    @appv1.exception_handler(HTTPException)
     async def custom_http_exception_handler(request, exc):
         return await http_exception_handler(request, exc)
 

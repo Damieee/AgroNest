@@ -30,7 +30,7 @@ from ..utils.token_generator import TokenGenerator
 from .crud import create_user, get_user
 
 # Import OAuth2PasswordRequestForm for login form
-from fastapp.api.security import OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlmodel import Session, select
 
 # Create an APIRouter instance

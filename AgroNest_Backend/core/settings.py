@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from databases import Database
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 
 BASE_DIR = Path(__file__).parent.resolve()
 

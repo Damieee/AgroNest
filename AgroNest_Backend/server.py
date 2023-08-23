@@ -12,7 +12,7 @@ def main() -> None:
         port=settings.PORT,
         reload=settings.RELOAD,
         factory=True,
-    )
+    )  
 
 if __name__ == "__main__":
     main()
