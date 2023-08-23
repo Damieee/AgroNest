@@ -9,7 +9,7 @@ from firebase_admin import credentials, messaging
 def init_fcm():
     if not len(firebase_admin._apps):
         cred = credentials.Certificate(
-            "backend/app/api/utils/AgroNest-firebase-adminsdk.json"
+            "AgroNest_Backend/app/api/utils/AgroNest-firebase-adminsdk.json"
         )
         firebase_admin.initialize_app(cred)
 
