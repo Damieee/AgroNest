@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     # Enable uvicorn reloading
     RELOAD: bool = True
     # Token
-    JWT_SECRET_KEY: str = 'JWT_SECRET_KEY'
+    JWT_SECRET_KEY: str = 'pnHkwLIQ_EMCfNAk-LO6qete9BXqTi78RvB2JRahJS8'
     # Database settings
     DB_FILE_PATH: str = f"sqlite:///{BASE_DIR}/app.db"
     DB_ECHO: bool = False
