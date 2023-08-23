@@ -18,6 +18,7 @@ import os
 
 def get_app() -> FastAPI:
     """
+    
     Get FastAPI application.
 
     This is the main constructor of an application.
