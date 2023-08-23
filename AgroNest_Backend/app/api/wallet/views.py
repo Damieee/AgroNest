@@ -10,9 +10,9 @@ from ..utils import constants
 from core.engine import get_db
 from ..utils.jwt_util import get_current_user
 
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from paystackapi.paystack import Paystack
-from paystackapi.transaction import Transaction
+from fastapp.api.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from paystackapp.api.paystack import Paystack
+from paystackapp.api.transaction import Transaction
 
 paystack = Paystack(secret_key=constants.PAYSTACK_SECRET_KEY)
 import uuid

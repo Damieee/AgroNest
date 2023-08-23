@@ -11,8 +11,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 131400
 ROOT_TOKEN = '1c241675-504e-4329-9e11-eb3b16957347'
 RADIUS_BASE_URL = 'http://178.79.149.74/cake3/rd_cake'
 
-PAYSTACK_BASE_URL = 'https://api.paystack.co'
-RAVE_BASE_URL = 'https://api.flutterwave.com/v3'
+PAYSTACK_BASE_URL = 'https://app.api.paystack.co'
+RAVE_BASE_URL = 'https://app.api.flutterwave.com/v3'
 
 
 PAYSTACK_SECRET_KEY = 'sk_live_8d8995dcc919b6192e293cee37d38957406afe07'

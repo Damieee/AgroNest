@@ -1,0 +1,15 @@
+aiosmtplib==2.0.2
+fastapi==0.101.1
+fastapi_jwt_auth==0.5.0
+fastapi_sqlalchemy==0.2.1
+firebase_admin==6.2.0
+jose==1.0.0
+passlib==1.7.4
+paystackapi==2.1.0
+pydantic==1.10.4
+rave_python==1.4.0
+Requests==2.31.0
+SQLAlchemy==1.4.41
+sqlmodel==0.0.8
+starlette==0.31.0
+uvicorn==0.23.2

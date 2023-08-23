@@ -8,7 +8,7 @@ ResponseModel from ..common.models: This is a model representing a response, pro
 
 logging: The standard Python logging module for handling log messages.
 
-fastapi.APIRouter: This is a class that helps organize and define routes within a FastAPI application.
+fastapp.api.APIRouter: This is a class that helps organize and define routes within a FastAPI application.
 
 core.engine.get_db: A function used to obtain a database session.
 

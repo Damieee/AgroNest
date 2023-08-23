@@ -7,7 +7,7 @@ from typing import (
 from sqlmodel import Field, SQLModel
 
 class ResponseModel(SQLModel):
-    """Creates a response model for the api.
+    """Creates a response model for the app.api.
 
     Provides a structure for providing a response to the .
     Provides a static method for success responses

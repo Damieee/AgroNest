@@ -8,7 +8,7 @@ from fastapi import (
     HTTPException,
     status,
 )
-from fastapi.security import (
+from fastapp.api.security import (
     OAuth2PasswordBearer, )
 
 from jose import JWTError, jwt
@@ -22,8 +22,8 @@ from sqlmodel import Session
 
 # from app.auth import (
 #     crud, )
-from api.auth.models import (TokenData, User)
-from api.auth import (crud)
+from app.api.auth.models import (TokenData, User)
+from app.api.auth import (crud)
 
 from .constants import (
     JWT_ALGORITHM,

@@ -4,7 +4,7 @@ import os
 from passlib.context import (
     CryptContext, )
 
-from api.auth.models import Userr
+from app.api.auth.models import Userr
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 RADIUS_BASE_URL = os.environ.get("RADIUS_BASE_URL")
