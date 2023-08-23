@@ -8,7 +8,7 @@ from fastapi import (
     HTTPException,
     status,
 )
-from fastapp.api.security import (
+from fastapi.security import (
     OAuth2PasswordBearer, )
 
 from jose import JWTError, jwt

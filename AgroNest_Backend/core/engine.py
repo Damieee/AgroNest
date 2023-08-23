@@ -1,7 +1,7 @@
 from core import settings
 from sqlmodel import Field, SQLModel, Session, create_engine
 
-from core.settings import settings
+from core.settings import settings, DATABASE_URL
 from sqlalchemy.orm import sessionmaker
 from typing import Generator, Optional
 
@@ -11,7 +11,7 @@ connect_args = {
 }
 
 engine = create_engine(
-    settings.DB_URL,
+    DATABASE_URL,
     echo=True,
     connect_args=connect_args,
     pool_pre_ping=True,

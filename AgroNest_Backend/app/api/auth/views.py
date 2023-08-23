@@ -4,10 +4,10 @@ import requests
 from sqlmodel import Session
 
 # Import constants, models, and utility functions
-from ..utils.constants import ACCESS_TOKEN_EXPIRE_MINUTES
+from app.api.utils.constants import ACCESS_TOKEN_EXPIRE_MINUTES
 from .models import UserCreate, User, UserRead, LoginRequest, Token, Userr, MobilePhoneToken
 from ..common.models import ResponseModel
-from ..utils import constants
+import app.api.utils.constants as constants
 
 # Import required modules for logging and FastAPI
 import logging
@@ -15,7 +15,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 # Import database session and utility functions
 from core.engine import get_db
-from ..utils import jwt_util
+import app.api.utils.jwt_util as jwt_util
 
 # Import cryptographic utility functions
 from ..utils.crypt_util import get_password_hash, verify_password
@@ -32,13 +32,17 @@ from .crud import create_user, get_user
 # Import OAuth2PasswordRequestForm for login form
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlmodel import Session, select
+import asyncio
 
 # Create an APIRouter instance
 router = APIRouter()
 
 # Create a logger instance
 logger = logging.getLogger(__name__)
-generated_token = TokenGenerator.generate_token()
+
+# Run the coroutine using an event loop
+loop = asyncio.get_event_loop()
+generated_token = loop.run_until_complete(TokenGenerator.generate_token())
 
 
 # Endpoint to sign up a new user
@@ -209,16 +213,16 @@ async def reset_password(user: UserCreate, db: Session = Depends(get_db)):
         'login_page': 'AgroNest',
         'reset_password_page_id': 21,
         'email': user.email,
-        'token': token,
-        'new_password': user.password,
+        'token': generated_token,
+        'password': user.password,
         'confirm_password': user.confirm_password,
         'phone': user.phone,
         'i18n': 'en_GB',
     }
 
     # Update user's password
-    user.hashed_password = user.update_password(new_password)
-    user.reset_password_token = None  # Reset the reset token
+    user.hashed_password = user.update_password(user.password)
+    generated_token = None  # Reset the reset token
     db.commit()
 
     return ResponseModel.success(message='Password reset successful', data=None)

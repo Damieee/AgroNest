@@ -10,7 +10,7 @@ from ..utils import constants
 from core.engine import get_db
 from ..utils.jwt_util import get_current_user
 
-from fastapp.api.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from paystackapp.api.paystack import Paystack
 from paystackapp.api.transaction import Transaction
 

@@ -23,7 +23,7 @@ class UserBase(SQLModel):
     created_at: datetime = Field(default=datetime.utcnow)
     follower_count: int = Field(default=0)
     following_count: int = Field(default=0)
-    updated_at: datetime = Field(default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at: datetime = Field(default=datetime.utcnow)
 
 
 class User(UserBase, table=True):
